@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Template that shows pictures</title>
+		{% load static %}
+		<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="home">
+			<img src="{% static "images/cat.jpeg"%}" alt="Welcome" width="32" height="32">
+			<span class="info"> Welcome: {{username}} </span>
+			<h2> Current Time: {{now}} </h2>
+		</div>
+	</body>
+</html>

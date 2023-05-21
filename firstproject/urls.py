@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp.views import sayhello # myapp.views => [root_path]/myapp/urls.py
+from myapp.views import hello2
+from myapp.views import hello3
+from myapp.views import hello4
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path(url, function),
+    # url name/<data_type1:parameter1>/<data_type2:parameter2>/......
+    path('admin/', admin.site.urls), # default website ... (that website with rocket...)
+    path('', sayhello),
+    path('hello2/<str:username>', hello2), # http://127.0.0.1:8000/hello2/<str:username> Ex: http://127.0.0.1:8000/hello2/Tom
+    path('hello3/<str:username>', hello3),
+    path('hello4/<str:username>', hello4),
 ]
