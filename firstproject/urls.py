@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import sayhello # myapp.views => [root_path]/myapp/urls.py
+from myapp.views import sayhello # myapp.views => [root_path]/myapp/views.py
 from myapp.views import hello2
 from myapp.views import hello3
 from myapp.views import hello4
+from myapp.views import dice
+from myapp.views import dice2
+from myapp.views import dice3
+from myapp.views import show
+from myapp.views import filter
 
 urlpatterns = [
     # path(url, function),
@@ -29,4 +34,9 @@ urlpatterns = [
     path('hello2/<str:username>', hello2), # http://127.0.0.1:8000/hello2/<str:username> Ex: http://127.0.0.1:8000/hello2/Tom
     path('hello3/<str:username>', hello3),
     path('hello4/<str:username>', hello4),
+    path('dice/', dice),
+    path('dice2/', dice2),
+    path('dice3/', dice3),
+    path('show/', show),
+    path('filter/', filter),
 ]
