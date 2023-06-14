@@ -21,7 +21,7 @@ def hello4(request, username):
 
 def dice(request):
 	dice_result = random.randint(1, 6)
-	return render(request, "dice.html", {"dice_result_on_html":dice_result})
+	return render(request, "dice.html", {"no":dice_result})
 
 def dice2(request):
 	no1 = random.randint(1, 6)
@@ -35,15 +35,15 @@ def dice3(request):
 	times = times + 1
 	local_times=times								# assign value to local variable: local_times
 	username="David"
-	dict_no={"no":random.randint(1,6)} #####??????看不懂，今天先到這邊吧…
+	dict_no={"no":random.randint(1,6)}				# ? I can not understang why it wrote this on book ... skip it ...
 	return render(request,"dice3.html",locals())
 
 def show(request):
-    person1={"name":"Amy","phone":"049-1234567","age":20}
-    person2={"name":"Jack","phone":"02-4455666","age":25}
-    person3={"name":"Nacy","phone":"04-9876543","age":17}
-    persons=[person1,person2,person3]
-    return render(request,"show.html",locals())
+	person1={"name":"Amy","phone":"049-1234567","age":20}
+	person2={"name":"Jack","phone":"02-4455666","age":25}
+	person3={"name":"Nacy","phone":"04-9876543","age":17}
+	persons=[person1,person2,person3]
+	return render(request,"show.html",locals())
 
 def filter(request):
 	value=4
